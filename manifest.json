@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome插件測試",
+  "description": "測試用",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*","https://www.google.com.tw/*"],
+      "js": ["./js/script.js"]
+    }
+  ],
+  "action":{
+    "default_popup": "./popup/index.html",
+    "default_title": "Latest Covid Report",
+    "default_icon": {
+      "16": "./img/32x32.png"
+    }
+  },
+  "icons": {
+    "16": "./img/32x32.png",
+    "32": "./img/32x32.png",
+    "48": "./img/32x32.png",
+    "128": "./img/32x32.png"
+  },
+  "permissions": ["tabs", "activeTab", "scripting","alarms"],
+  "host_permissions": ["http://*/*", "https://*/*"]
+}
